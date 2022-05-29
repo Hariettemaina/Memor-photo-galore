@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Image,Location,Categories
+from . models import Image, Location, Categories
 # Register your models here.
 
 class ImageAdmin(admin.ModelAdmin):

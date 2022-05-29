@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class Categories(models.Model):
     name = models.CharField(max_length=30)
 
@@ -13,8 +12,7 @@ class Categories(models.Model):
 
     def __str__(self):
         return self.name
-    
-    
+
 class Location(models.Model):
     name = models.CharField(max_length=30)
 
@@ -26,14 +24,12 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
-    
-    
-    
+
 class Image(models.Model):
     title = models.CharField(max_length=30,default="title")
     description = models.TextField()
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
-    Categories = models.ManyToManyField(Categories)
+    categories = models.ManyToManyField(Categories)
     image_url = models.ImageField(upload_to = 'images/',blank=True,default="image_url")
 
     def __str__(self):
@@ -68,4 +64,3 @@ class Image(models.Model):
         location = Location.objects.get(name = search_term)
         images = cls.objects.filter(location = location)
         return images
-
