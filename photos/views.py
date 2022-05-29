@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse,Http404
 from .models import Image,Location,Categories
 
 # Create your views here.
@@ -19,10 +20,7 @@ def search(request):
         searched_images = Image.search_by_category(search_term)
         return render(request,'photos/search.html',{"images":searched_images,"category":search_term})
 
-
-
-
-
+  
 
 # from django.shortcuts import render
 
