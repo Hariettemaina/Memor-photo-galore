@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Category(models.Model):
+class Categories(models.Model):
     name = models.CharField(max_length=30)
 
     def save_category(self):
@@ -33,7 +33,7 @@ class Image(models.Model):
     title = models.CharField(max_length=30,default="title")
     description = models.TextField()
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
-    Category = models.ManyToManyField(Category)
+    Categories = models.ManyToManyField(Categories)
     image_url = models.ImageField(upload_to = 'images/',blank=True,default="image_url")
 
     def __str__(self):
@@ -52,9 +52,9 @@ class Image(models.Model):
 
     @classmethod
     def search_by_category(cls,search_term):
-        images = cls.objects.filter(category__name__contains = search_term)
+        images = cls.objects.filter(categories__name__contains = search_term)
         if len(images) < 1:
-            case_images = cls.objects.filter(category__name__contains = search_term.capitalize())
+            case_images = cls.objects.filter(categories__name__contains = search_term.capitalize())
             return case_images
         else:
             return images
