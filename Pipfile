@@ -12,6 +12,8 @@ django-bootstrap3 = "*"
 django-jquery = "*"
 whitenoise = "*"
 django-heroku = "*"
+python-decouple = "*"
+dj-database-url = "*"
 
 [dev-packages]
 

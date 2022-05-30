@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'jquery'
+    
 ]
 
 MIDDLEWARE = [
@@ -128,19 +128,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+# Extra places for collectstatic to find static files.
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -149,5 +150,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# Configure Django App for Heroku.
-django_heroku.settings(locals())
+# # Configure Django App for Heroku.
+# django_heroku.settings(locals())
