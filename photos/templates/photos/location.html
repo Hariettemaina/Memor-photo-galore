@@ -1,9 +1,9 @@
-{%extends 'photos/base.html'%}
+{% extends 'photos/base.html' %}
 
 {% block content %}
 {{block.super}}
 <div class="scrollmenu">
-    {%for location in locations %}
+    {% for location in locations %}
     <a href="{% url 'location' location.id %}">{{location}}</a>
     {% endfor %}
 </div>

@@ -10,6 +10,8 @@ pillow = "*"
 django-bootstrap4 = "*"
 django-bootstrap3 = "*"
 django-jquery = "*"
+whitenoise = "*"
+django-heroku = "*"
 
 [dev-packages]
 
