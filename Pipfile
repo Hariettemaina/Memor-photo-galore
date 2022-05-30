@@ -8,6 +8,8 @@ django = "*"
 psycopg2 = "*"
 pillow = "*"
 django-bootstrap4 = "*"
+django-bootstrap3 = "*"
+django-jquery = "*"
 
 [dev-packages]
 
