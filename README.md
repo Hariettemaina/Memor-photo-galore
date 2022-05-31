@@ -21,8 +21,8 @@ The application allows users to view images according to their categories and lo
 - Clone the Pixels directory
 - Create your own virtual environment and activate it using these respective commands:python3.8 -m venv --without-pip virtual && source virtual/bin/activate
 - Install all the necessary dependencies necessarry for running the application using this command: pip install-r requirements.txt
-- Create a database: psql then create the databse using this command: CREATE DATABASE gallery
-- Run migrations using these respective commmands: python3.6 manage.py makemigrations images then: python3.8 manage.py migrate
+- Create a database: psql then create the databse using this command: CREATE DATABASE photos
+- Run migrations using these respective commmands: python3.8 manage.py makemigrations then: python3.8 manage.py migrate
 - Run the app using this command: python3.8 manage.py runserver on the terminal.You can then open the app on your browser
 # Technologies Used
 Python 3.8
