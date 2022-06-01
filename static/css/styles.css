@@ -1,3 +1,4 @@
 .jumbotron{
     background-color: rgba(188, 46, 46, 0.923);
+    object-fit: cover;
 }
